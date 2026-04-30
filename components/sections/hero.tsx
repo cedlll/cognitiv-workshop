@@ -32,10 +32,7 @@ export function Hero() {
       />
       {/* Bottom fade */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
-        style={{
-          background: "linear-gradient(to bottom, transparent, #0a0a0a)",
-        }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background"
         aria-hidden="true"
       />
 
@@ -46,11 +43,11 @@ export function Hero() {
           transition={{ duration: 0.6, ease }}
           className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
         >
-          — BGC, Manila
+          — BGC
           <span className="mx-2 text-border" aria-hidden="true">
             /
           </span>
-          May 30, 2026
+          May 30
         </motion.p>
 
         <motion.h1
@@ -68,7 +65,7 @@ export function Hero() {
           transition={{ duration: 0.6, ease, delay: 0.16 }}
           className="mt-6 max-w-[640px] text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl"
         >
-          A one-day workshop for designers ready to work with AI —{" "}
+          A hands-on workshop for designers ready to work with AI —{" "}
           <span className="text-foreground">not around it.</span>
         </motion.p>
 
@@ -121,7 +118,7 @@ export function Hero() {
         >
           {[
             { label: "Date", value: "Sat · May 30" },
-            { label: "Time", value: "9:00 — 18:00" },
+            { label: "Time", value: "9:00 AM-6:00 PM" },
             { label: "Venue", value: "LgoConnects" },
             {
               label: "Status",

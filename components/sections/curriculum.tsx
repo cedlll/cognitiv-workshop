@@ -25,6 +25,8 @@ const topics = [
 ]
 
 export function Curriculum() {
+  const isLastOdd = topics.length % 2 !== 0
+
   return (
     <section
       id="curriculum"
@@ -41,20 +43,21 @@ export function Curriculum() {
             id="curriculum-heading"
             className="mt-5 max-w-[720px] font-display text-3xl font-semibold leading-[1.08] tracking-tight text-foreground text-balance sm:text-4xl md:text-[44px]"
           >
-            What you&apos;ll actually learn.
+            What you'll actually learn.
           </h2>
         </Reveal>
 
         <ul className="mt-14 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
           {topics.map((topic, i) => {
-            const isLastOdd = topics.length % 2 !== 0 && i === topics.length - 1
+            const isLastItem = i === topics.length - 1
+            const shouldSpanCols = isLastOdd && isLastItem
             return (
               <Reveal
                 key={topic.n}
                 as="li"
                 delay={0.05 * i}
                 className={`group relative bg-surface-elevated p-6 transition-colors hover:bg-card md:p-8 ${
-                  isLastOdd ? "sm:col-span-2" : ""
+                  shouldSpanCols ? "sm:col-span-2" : ""
                 }`}
               >
                 {/* Left accent on hover */}
@@ -65,7 +68,7 @@ export function Curriculum() {
 
                 <div
                   className={
-                    isLastOdd
+                    shouldSpanCols
                       ? "grid gap-x-10 gap-y-3 md:grid-cols-[1fr_1.4fr] md:items-start"
                       : "flex flex-col gap-3"
                   }

@@ -1,12 +1,14 @@
+import Image from "next/image"
 import Link from "next/link"
 import { SectionLabel } from "@/components/section-label"
 import { Reveal } from "@/components/reveal"
-import { MapPin, Wifi, Wind, ParkingSquare, ExternalLink } from "lucide-react"
+import { MapPin, ParkingSquare, ExternalLink } from "lucide-react"
 
-const amenities = [
-  { icon: ParkingSquare, label: "Parking nearby" },
-  { icon: Wind, label: "Air conditioned" },
-  { icon: Wifi, label: "High-speed Wi-Fi" },
+const parking = [
+  "Bonifacio One Tech Tower (31st St & Rizal Dr)",
+  "Three Parkade (near 32nd St)",
+  "Carplaza (32nd St)",
+  "UPark (34th St)",
 ]
 
 export function Venue() {
@@ -64,67 +66,37 @@ export function Venue() {
               <ExternalLink className="h-3 w-3" strokeWidth={1.5} aria-hidden="true" />
             </Link>
 
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {amenities.map(({ icon: Icon, label }) => (
-                <li
-                  key={label}
-                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground"
-                >
-                  <Icon className="h-3 w-3" strokeWidth={1.5} aria-hidden="true" />
-                  {label}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-6">
+              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
+                <ParkingSquare className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+                Nearby parking
+              </div>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {parking.map((spot) => (
+                  <li
+                    key={spot}
+                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground"
+                  >
+                    {spot}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
 
-          {/* Map placeholder */}
+          {/* Venue photo */}
           <Reveal
             delay={0.14}
             className="relative min-h-[260px] bg-surface-elevated md:min-h-0"
           >
-            <div
-              className="absolute inset-0 grid-pattern opacity-50"
-              aria-hidden="true"
+            <Image
+              src="/venue-3.jpg"
+              alt="LgoConnects event space"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority={false}
             />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(circle at 60% 45%, rgba(124,92,252,0.18), transparent 60%)",
-              }}
-              aria-hidden="true"
-            />
-            {/* Stylized "map" pin */}
-            <div className="relative flex h-full items-center justify-center p-8">
-              <div className="relative">
-                <div
-                  className="absolute -inset-8 rounded-full"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(124,92,252,0.25), transparent 70%)",
-                  }}
-                  aria-hidden="true"
-                />
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-full border border-primary/40 bg-background">
-                  <span
-                    className="absolute h-3 w-3 rounded-full bg-primary"
-                    aria-hidden="true"
-                  />
-                  <span
-                    className="absolute h-12 w-12 animate-ping rounded-full bg-primary/30"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="mt-6 text-center">
-                  <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-                    14.5547° N, 121.0244° E
-                  </p>
-                  <p className="mt-1 font-mono text-[13px] text-foreground">
-                    Bonifacio Global City
-                  </p>
-                </div>
-              </div>
-            </div>
           </Reveal>
         </div>
       </div>

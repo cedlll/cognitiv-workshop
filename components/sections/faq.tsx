@@ -66,7 +66,7 @@ export function Faq() {
                 className="border-b border-border last:border-b-0"
               >
                 <Accordion.Header>
-                  <Accordion.Trigger className="group flex w-full items-center justify-between gap-6 bg-surface-elevated px-5 py-5 text-left transition-colors hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary sm:px-6 sm:py-6">
+                  <Accordion.Trigger className="group flex w-full items-center justify-between gap-6 bg-surface-elevated px-5 py-5 text-left transition-colors hover:bg-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary sm:px-6 sm:py-6 cursor-pointer">
                     <span className="flex items-center gap-4">
                       <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
                         {String(i + 1).padStart(2, "0")}

@@ -1,26 +1,31 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowLeft, Copy, Check, Mail } from "lucide-react"
 import { useState } from "react"
 import { Reveal } from "@/components/reveal"
 
 const BANK_DETAILS = {
-  bankName: "BDO Unibank",
-  accountName: "Juan Dela Cruz",
-  accountNumber: "0012 3456 7890",
+  bankName: process.env.NEXT_PUBLIC_BANK_NAME || "BPI",
+  accountName: process.env.NEXT_PUBLIC_ACCOUNT_NAME || "Clarence Cedric Lee",
+  accountNumber: process.env.NEXT_PUBLIC_ACCOUNT_NUMBER || "3729-3760-26",
+  accountNumberClean: (process.env.NEXT_PUBLIC_ACCOUNT_NUMBER || "3729-3760-26").replace(/\s|-/g, ""),
 }
 
-const CONTACT_EMAIL = "hello@cognitivworkshop.com"
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@cognitivworkshop.com"
 
 export default function ReservePage() {
   const [copied, setCopied] = useState<string | null>(null)
 
-  const copyToClipboard = (text: string, field: string) => {
-    navigator.clipboard.writeText(text)
-    setCopied(field)
-    setTimeout(() => setCopied(null), 2000)
+  const copyToClipboard = async (text: string, field: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+      setCopied(field)
+      setTimeout(() => setCopied(null), 2000)
+    } catch (err) {
+      // Fallback: alert user to copy manually
+      alert('Failed to copy. Please select and copy manually.')
+    }
   }
 
   return (
@@ -140,7 +145,7 @@ export default function ReservePage() {
                   </div>
                   <button
                     onClick={() =>
-                      copyToClipboard(BANK_DETAILS.accountNumber.replace(/\s/g, ""), "number")
+                      copyToClipboard(BANK_DETAILS.accountNumberClean, "number")
                     }
                     className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                     aria-label="Copy account number"

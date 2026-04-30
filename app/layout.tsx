@@ -22,14 +22,13 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Designing at Full Speed — A Half-Day Workshop · May 30, 2026 · BGC, Manila',
+  title: 'Design x AI — A Half-Day Workshop · May 30, 2026 · BGC',
   description:
     'A hands-on, in-person workshop for product and UX designers ready to build fluency with AI tools. 20 seats only. May 30, 2026 at LgoConnects, BGC.',
-  generator: 'v0.app',
   openGraph: {
-    title: 'Designing at Full Speed — A Half-Day Workshop',
+    title: 'Design x AI — A Half-Day Workshop · May 30, 2026 · BGC',
     description:
-      'A hands-on workshop for designers ready to work with AI — not around it. May 30, 2026, BGC, Manila.',
+      'A hands-on workshop for designers ready to work with AI — not around it. May 30, 2026, BGC.',
     type: 'website',
   },
   icons: {
