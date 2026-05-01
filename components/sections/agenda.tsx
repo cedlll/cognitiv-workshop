@@ -2,22 +2,14 @@ import { SectionLabel } from "@/components/section-label"
 import { Reveal } from "@/components/reveal"
 
 const schedule = [
-  { time: "09:00 AM", session: "Doors Open + Coffee", kind: "break" },
-  { time: "09:30 AM", session: "Opening — The State of Design + AI" },
-  { time: "10:00 AM", session: "Session 1 — Prompting for Designers" },
-  {
-    time: "11:00 AM",
-    session: "Session 2 — AI-Assisted Prototyping (hands-on)",
-  },
-  { time: "12:30 PM", session: "Lunch Break", kind: "break" },
-  { time: "01:30 PM", session: "Session 3 — Design Systems + LLMs" },
-  { time: "02:30 PM", session: "Session 4 — Evaluating AI Output" },
-  { time: "03:30 PM", session: "Break", kind: "break" },
-  { time: "03:45 PM", session: "Session 5 — Building Your AI Workflow" },
-  { time: "05:00 PM", session: "Group Critique + Open Build Time" },
-  { time: "05:45 PM", session: "Closing Remarks + Q&A" },
-  { time: "06:00 PM", session: "End", kind: "break" },
-] as const
+  { time: "01:00 PM", session: "Doors Open", kind: "break" as const },
+  { time: "01:30 PM", session: "Lightning Talk" },
+  { time: "02:00 PM", session: "Workshop" },
+  { time: "03:00 PM", session: "Short Break", kind: "break" as const },
+  { time: "03:15 PM", session: "Workshop (cont.)" },
+  { time: "04:30 PM", session: "Networking", kind: "break" as const },
+  { time: "05:00 PM", session: "End", kind: "break" as const },
+]
 
 export function Agenda() {
   return (
@@ -40,7 +32,7 @@ export function Agenda() {
               May 30, 2026
             </h2>
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-              09:00 — 18:00 PHT
+              01:00 — 05:00 PM PHT
             </span>
           </div>
         </Reveal>
@@ -48,7 +40,7 @@ export function Agenda() {
         <Reveal delay={0.1}>
           <ol className="mt-12 overflow-hidden rounded-lg border border-border">
             {schedule.map((item, i) => {
-              const isBreak = item.kind === "break"
+              const isBreak = "kind" in item && item.kind === "break"
               return (
                 <li
                   key={item.time}

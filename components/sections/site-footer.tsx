@@ -7,7 +7,15 @@ export function SiteFooter() {
             © {new Date().getFullYear()} · All rights reserved.
           </p>
           <p className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-            Built for designers who ship.
+            Built by{" "}
+            <a
+              href="https://www.linkedin.com/in/cedmanila/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground transition-colors hover:text-primary"
+            >
+              Cedric Lee
+            </a>
           </p>
         </div>
       </div>

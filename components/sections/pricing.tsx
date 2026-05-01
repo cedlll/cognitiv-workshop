@@ -71,7 +71,7 @@ export function Pricing() {
                       Time
                     </p>
                     <p className="mt-1 text-[14px] font-medium text-foreground">
-                      9:00 AM – 6:00 PM
+                      1:00 PM – 5:00 PM
                     </p>
                   </div>
                   <div>

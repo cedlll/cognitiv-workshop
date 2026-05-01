@@ -12,7 +12,7 @@ const BANK_DETAILS = {
   accountNumberClean: (process.env.NEXT_PUBLIC_ACCOUNT_NUMBER || "3729-3760-26").replace(/\s|-/g, ""),
 }
 
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@cognitivworkshop.com"
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "cedmanila@gmail.com"
 
 export default function ReservePage() {
   const [copied, setCopied] = useState<string | null>(null)
