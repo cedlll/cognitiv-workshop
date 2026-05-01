@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { SectionLabel } from "@/components/section-label"
 import { Reveal } from "@/components/reveal"
+import { motion, useReducedMotion } from "framer-motion"
 
 const inclusions = [
   "Half-day workshop access",
@@ -10,6 +13,8 @@ const inclusions = [
 ]
 
 export function Pricing() {
+  const reduce = useReducedMotion()
+
   return (
     <section
       id="tickets"
@@ -31,9 +36,14 @@ export function Pricing() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="mt-12 relative">
+          <div className="mt-12 relative" style={{ perspective: "800px" }}>
             {/* Ticket container */}
-            <div className="flex flex-col md:flex-row">
+            <motion.div
+              className="flex flex-col md:flex-row"
+              whileHover={reduce ? undefined : { rotateX: -1, rotateY: 1.5, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              style={{ transformStyle: "preserve-3d" }}
+            >
               {/* Main ticket body */}
               <div className="relative flex-1 rounded-l-xl rounded-r-xl md:rounded-r-none bg-surface-elevated border border-border p-8 md:p-10">
                 {/* Top: event info */}
@@ -122,7 +132,14 @@ export function Pricing() {
               </div>
 
               {/* Ticket stub / CTA */}
-              <div className="relative rounded-b-xl md:rounded-b-none md:rounded-r-xl bg-surface-elevated border border-border md:border-l-0 md:border-t flex flex-col items-center justify-center p-6 md:p-8 md:w-[200px]">
+              <motion.div
+                className="relative rounded-b-xl md:rounded-b-none md:rounded-r-xl bg-surface-elevated border border-border md:border-l-0 md:border-t flex flex-col items-center justify-center p-6 md:p-8 md:w-[200px]"
+                whileHover={reduce ? undefined : {
+                  x: 4,
+                  rotate: 1.5,
+                  transition: { type: "spring", stiffness: 400, damping: 15 },
+                }}
+              >
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
                   Admit one
                 </p>
@@ -140,8 +157,8 @@ export function Pricing() {
                 <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60 text-center">
                   No. 001–020
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </Reveal>
 

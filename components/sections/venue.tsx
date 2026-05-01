@@ -5,10 +5,10 @@ import { Reveal } from "@/components/reveal"
 import { MapPin, ParkingSquare, ExternalLink } from "lucide-react"
 
 const parking = [
-  "Bonifacio One Tech Tower (31st St & Rizal Dr)",
-  "Three Parkade (near 32nd St)",
-  "Carplaza (32nd St)",
-  "UPark (34th St)",
+  {
+    name: "Gallery Parkade (9th Ave.)",
+    url: "https://maps.app.goo.gl/bgo8qqU5zTHXg4Fw8",
+  },
 ]
 
 export function Venue() {
@@ -55,32 +55,31 @@ export function Venue() {
               distance from major landmarks.
             </p>
 
-            <Link
-              href="https://maps.app.goo.gl/qVD5kiqygX1n3b8m7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
-            >
-              <MapPin className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
-              View on maps
-              <ExternalLink className="h-3 w-3" strokeWidth={1.5} aria-hidden="true" />
-            </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-2">
+              <Link
+                href="https://maps.app.goo.gl/qVD5kiqygX1n3b8m7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
+              >
+                <MapPin className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+                View on maps
+                <ExternalLink className="h-3 w-3" strokeWidth={1.5} aria-hidden="true" />
+              </Link>
 
-            <div className="mt-6">
-              <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
-                <ParkingSquare className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
-                Nearby parking
-              </div>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {parking.map((spot) => (
-                  <li
-                    key={spot}
-                    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-2.5 py-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground"
-                  >
-                    {spot}
-                  </li>
-                ))}
-              </ul>
+              {parking.map((spot) => (
+                <Link
+                  key={spot.name}
+                  href={spot.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-transparent px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
+                >
+                  <ParkingSquare className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" />
+                  {spot.name}
+                  <ExternalLink className="h-3 w-3" strokeWidth={1.5} aria-hidden="true" />
+                </Link>
+              ))}
             </div>
           </Reveal>
 

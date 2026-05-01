@@ -90,26 +90,13 @@ export default function ReservePage() {
 
               <div className="mt-8 space-y-4">
                 {/* Bank Name */}
-                <div className="flex items-center justify-between rounded-md border border-border bg-card px-4 py-3">
-                  <div>
-                    <span className="block font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                      Bank
-                    </span>
-                    <span className="mt-0.5 block text-[15px] text-foreground">
-                      {BANK_DETAILS.bankName}
-                    </span>
-                  </div>
-                  <button
-                    onClick={() => copyToClipboard(BANK_DETAILS.bankName, "bank")}
-                    className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                    aria-label="Copy bank name"
-                  >
-                    {copied === "bank" ? (
-                      <Check className="h-4 w-4 text-accent-2" />
-                    ) : (
-                      <Copy className="h-4 w-4" />
-                    )}
-                  </button>
+                <div className="rounded-md border border-border bg-card px-4 py-3">
+                  <span className="block font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                    Bank
+                  </span>
+                  <span className="mt-0.5 block text-[15px] text-foreground">
+                    {BANK_DETAILS.bankName}
+                  </span>
                 </div>
 
                 {/* Account Name */}
