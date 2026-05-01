@@ -82,11 +82,11 @@ export function Hero() {
           initial={initial}
           animate={animate}
           transition={{ duration: 0.6, ease, delay: 0.3 }}
-          className="mt-10 flex flex-wrap items-center gap-3"
+          className="mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3"
         >
           <a
             href="/reserve"
-            className="group inline-flex items-center gap-2 rounded-md cta-gradient px-5 py-3 text-sm font-medium text-white animate-pulse-glow transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group inline-flex items-center justify-center gap-2 rounded-md cta-gradient px-5 py-3 text-sm font-medium text-white animate-pulse-glow transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Reserve your seat
             <ArrowRight
@@ -98,7 +98,7 @@ export function Hero() {
 
           <a
             href="#schedule"
-            className="group inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-foreground/40 hover:bg-surface-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="group inline-flex items-center justify-center gap-2 rounded-md border border-border bg-transparent px-5 py-3 text-sm font-medium text-foreground transition-colors hover:border-foreground/40 hover:bg-surface-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             View the agenda
             <ArrowDown
