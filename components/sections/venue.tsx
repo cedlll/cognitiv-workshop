@@ -28,7 +28,7 @@ export function Venue() {
             id="venue-heading"
             className="mt-5 font-display text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-[44px]"
           >
-            LgoConnects, BGC.
+            LgoConnects Office, BGC.
           </h2>
         </Reveal>
 
@@ -40,9 +40,11 @@ export function Venue() {
               Address
             </div>
             <address className="mt-4 not-italic text-[15px] leading-relaxed text-foreground">
-              LgoConnects
+              LgoConnects Office
               <br />
               <span className="text-muted-foreground">
+                16th Floor, High Street Corporate Plaza Tower 2
+                <br />
                 Bonifacio Global City, Taguig
                 <br />
                 Metro Manila, Philippines
@@ -50,7 +52,7 @@ export function Venue() {
             </address>
 
             <p className="mt-6 max-w-[420px] text-[14px] leading-relaxed text-muted-foreground">
-              A modern co-working and event space in the heart of BGC.
+              A modern event space on the 16th floor of High Street Corporate Plaza Tower 2.
               Accessible by MRT (Bonifacio High Street), Grab, and walking
               distance from major landmarks.
             </p>

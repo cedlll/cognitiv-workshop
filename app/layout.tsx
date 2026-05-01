@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Design x AI — A Half-Day Workshop · May 30, 2026 · BGC',
   description:
-    'A hands-on, in-person workshop for product and UX designers ready to build fluency with AI tools. 20 seats only. May 30, 2026 at LgoConnects, BGC.',
+    'A hands-on, in-person workshop for product and UX designers ready to build fluency with AI tools. 20 seats only. May 30, 2026 at LgoConnects Office, BGC.',
   keywords: [
     'design workshop',
     'AI design',

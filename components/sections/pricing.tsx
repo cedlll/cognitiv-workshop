@@ -89,7 +89,7 @@ export function Pricing() {
                       Venue
                     </p>
                     <p className="mt-1 text-[14px] font-medium text-foreground">
-                      LgoConnects, BGC
+                      LgoConnects Office, BGC
                     </p>
                   </div>
                 </div>

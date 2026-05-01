@@ -5,7 +5,7 @@ const topics = [
   {
     n: "01",
     title: "AI-Assisted Prototyping",
-    body: "Build functional mockups with v0, Cursor, and Claude. Go from brief to interactive prototype in under an hour.",
+    body: "Build functional prototypes with AI tools. Go from brief to interactive prototype in under an hour.",
   },
   {
     n: "02",

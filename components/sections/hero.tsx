@@ -119,7 +119,7 @@ export function Hero() {
           {[
             { label: "Date", value: "Sat · May 30" },
             { label: "Time", value: "1:00-5:00 PM" },
-            { label: "Venue", value: "LgoConnects" },
+            { label: "Venue", value: "16F LgoConnects Office" },
             {
               label: "Status",
               value: "Open",

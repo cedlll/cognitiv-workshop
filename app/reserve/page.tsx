@@ -49,13 +49,7 @@ export default function ReservePage() {
 
       <div className="mx-auto max-w-[900px] px-6 py-16 md:py-24">
         <Reveal>
-          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
-            Step 1 of 2
-          </span>
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <h1 className="mt-4 font-display text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl md:text-[44px]">
+          <h1 className="font-display text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl md:text-[44px]">
             Reserve Your Seat
           </h1>
         </Reveal>
@@ -239,8 +233,7 @@ export default function ReservePage() {
                   What happens next?
                 </h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                  Once we verify your payment, you&apos;ll receive a confirmation
-                  email within 24-48 hours with your ticket and event details.
+                  Once we verify your payment, you&apos;ll receive a confirmation email.
                 </p>
               </div>
             </div>
