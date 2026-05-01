@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, Copy, Check, Mail } from "lucide-react"
 import { useState } from "react"
 import { Reveal } from "@/components/reveal"
@@ -68,21 +69,22 @@ export default function ReservePage() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           {/* Bank Details Card */}
-          <Reveal delay={0.15}>
-            <div className="rounded-lg border border-border bg-surface-elevated p-6 md:p-8">
+          <Reveal delay={0.15} className="h-full">
+            <div className="h-full rounded-lg border border-border bg-surface-elevated p-6 md:p-8">
               <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                 Bank Transfer Details
               </h2>
 
-              {/* QR Code Placeholder */}
+              {/* QR Code */}
               <div className="mt-6 flex justify-center">
-                <div className="relative flex h-48 w-48 items-center justify-center rounded-lg border border-dashed border-border bg-card">
-                  <div className="text-center">
-                    <div className="mx-auto mb-2 h-12 w-12 rounded-md bg-muted" />
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                      QR Code
-                    </span>
-                  </div>
+                <div className="relative h-48 w-48 overflow-hidden rounded-lg">
+                  <Image
+                    src="/bpi-qr.jpg"
+                    alt="BPI QR code for payment"
+                    fill
+                    sizes="192px"
+                    className="object-contain"
+                  />
                 </div>
               </div>
 
@@ -174,8 +176,8 @@ export default function ReservePage() {
           </Reveal>
 
           {/* Instructions Card */}
-          <Reveal delay={0.2}>
-            <div className="rounded-lg border border-border bg-surface-elevated p-6 md:p-8">
+          <Reveal delay={0.2} className="h-full">
+            <div className="h-full rounded-lg border border-border bg-surface-elevated p-6 md:p-8">
               <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
                 How to Confirm Your Seat
               </h2>
