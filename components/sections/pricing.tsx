@@ -132,14 +132,7 @@ export function Pricing() {
               </div>
 
               {/* Ticket stub / CTA */}
-              <motion.div
-                className="relative rounded-b-xl md:rounded-b-none md:rounded-r-xl bg-surface-elevated border border-border md:border-l-0 md:border-t flex flex-col items-center justify-center p-6 md:p-8 md:w-[200px]"
-                whileHover={reduce ? undefined : {
-                  x: 4,
-                  rotate: 1.5,
-                  transition: { type: "spring", stiffness: 400, damping: 15 },
-                }}
-              >
+              <div className="relative rounded-b-xl md:rounded-b-none md:rounded-r-xl bg-surface-elevated border border-border md:border-l-0 md:border-t flex flex-col items-center justify-center p-6 md:p-8 md:w-[200px]">
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
                   Admit one
                 </p>
@@ -157,7 +150,7 @@ export function Pricing() {
                 <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60 text-center">
                   No. 001–020
                 </p>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </Reveal>
