@@ -69,14 +69,23 @@ export function Hero() {
           <span className="text-foreground">not around it.</span>
         </motion.p>
 
-        <motion.p
+        <motion.div
           initial={initial}
           animate={animate}
           transition={{ duration: 0.6, ease, delay: 0.22 }}
-          className="mt-3 text-sm text-muted-foreground"
+          className="mt-4 flex flex-wrap items-center gap-3"
         >
-          Hands-on. In-person. Limited to 20 participants.
-        </motion.p>
+          <span className="inline-flex items-center gap-2 rounded-full border border-[var(--urgency)]/30 bg-[var(--urgency)]/10 px-3 py-1 text-sm font-medium text-[var(--urgency)] animate-pulse-urgency">
+            <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--urgency)] opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--urgency)]" />
+            </span>
+            Only 5 seats left
+          </span>
+          <span className="text-sm text-muted-foreground">
+            Hands-on. In-person. Limited to 20 participants.
+          </span>
+        </motion.div>
 
         <motion.div
           initial={initial}
@@ -121,9 +130,9 @@ export function Hero() {
             { label: "Time", value: "1:00-5:00 PM" },
             { label: "Venue", value: "16F LgoConnects Office" },
             {
-              label: "Status",
-              value: "Open",
-              live: true,
+              label: "Availability",
+              value: "5 seats left",
+              urgent: true,
             },
           ].map((meta) => (
             <div
@@ -133,11 +142,11 @@ export function Hero() {
               <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
                 {meta.label}
               </span>
-              <span className="flex items-center gap-2 font-mono text-[13px] text-foreground">
-                {meta.live && (
+              <span className={`flex items-center gap-2 font-mono text-[13px] ${meta.urgent ? "text-[var(--urgency)] font-medium" : "text-foreground"}`}>
+                {meta.urgent && (
                   <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent-2)] opacity-60" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--accent-2)]" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--urgency)] opacity-60" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--urgency)]" />
                   </span>
                 )}
                 {meta.value}

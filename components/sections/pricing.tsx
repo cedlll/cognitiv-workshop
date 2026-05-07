@@ -27,12 +27,21 @@ export function Pricing() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <h2
-            id="tickets-heading"
-            className="mt-5 font-display text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-[44px]"
-          >
-            20 seats. One price.
-          </h2>
+          <div className="mt-5 flex flex-wrap items-center gap-4">
+            <h2
+              id="tickets-heading"
+              className="font-display text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl md:text-[44px]"
+            >
+              5 seats remaining.
+            </h2>
+            <span className="inline-flex items-center gap-2 rounded-full border border-[var(--urgency)]/30 bg-[var(--urgency)]/10 px-3 py-1.5 text-sm font-medium text-[var(--urgency)] animate-pulse-urgency">
+              <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--urgency)] opacity-60" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--urgency)]" />
+              </span>
+              Selling fast
+            </span>
+          </div>
         </Reveal>
 
         <Reveal delay={0.08}>
@@ -133,8 +142,8 @@ export function Pricing() {
 
               {/* Ticket stub / CTA */}
               <div className="relative rounded-b-xl md:rounded-b-none md:rounded-r-xl bg-surface-elevated border border-border md:border-l-0 md:border-t flex flex-col items-center justify-center p-6 md:p-8 md:w-[200px]">
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-4">
-                  Admit one
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--urgency)] mb-4">
+                  Only 5 left
                 </p>
                 <Link
                   href="/reserve"
@@ -157,7 +166,7 @@ export function Pricing() {
 
         <Reveal delay={0.18}>
           <p className="mt-8 max-w-[720px] text-[13px] text-muted-foreground">
-            Limited to 20 participants. One straightforward price. Secure your seat today and join us for an intensive half-day deep dive into design and AI.
+            15 of 20 seats have been claimed. Reserve yours before they&apos;re gone — no waitlist, no extensions.
           </p>
         </Reveal>
       </div>

@@ -66,8 +66,12 @@ export function SiteNav() {
 
         <Link
           href="/reserve"
-          className="rounded-md border border-border bg-surface-elevated px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary/60"
+          className="relative rounded-md border border-border bg-surface-elevated px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-foreground transition-colors hover:border-primary/60"
         >
+          <span className="absolute -top-1 -right-1 flex h-2 w-2" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--urgency)] opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--urgency)]" />
+          </span>
           Reserve seat
         </Link>
       </div>

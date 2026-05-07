@@ -20,6 +20,8 @@
   --accent: #7c5cfc;
   --accent-foreground: #ffffff;
   --accent-2: #4ade80;
+  --urgency: #f59e0b;
+  --urgency-foreground: #fffbeb;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #222222;
@@ -49,6 +51,8 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-2: var(--accent-2);
+  --color-urgency: var(--urgency);
+  --color-urgency-foreground: var(--urgency-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -142,5 +146,20 @@
 
   .animate-pulse-glow {
     animation: pulse-glow 2.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-urgency {
+    0%, 100% {
+      box-shadow:
+        0 0 0 0 rgba(245, 158, 11, 0.3);
+    }
+    50% {
+      box-shadow:
+        0 0 0 6px rgba(245, 158, 11, 0);
+    }
+  }
+
+  .animate-pulse-urgency {
+    animation: pulse-urgency 2s ease-in-out infinite;
   }
 }
