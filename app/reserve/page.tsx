@@ -48,7 +48,20 @@ export default function ReservePage() {
       </header>
 
       <div className="mx-auto max-w-[900px] px-6 py-16 md:py-24">
+        {/* Urgency banner */}
         <Reveal>
+          <div className="mb-8 flex items-center gap-3 rounded-lg border border-[var(--urgency)]/20 bg-[var(--urgency)]/5 px-4 py-3">
+            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--urgency)] opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--urgency)]" />
+            </span>
+            <p className="text-[13px] font-medium text-[var(--urgency)]">
+              Only 5 of 20 seats remain — reserve yours now before they&apos;re gone.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.05}>
           <h1 className="font-display text-3xl font-semibold leading-[1.12] tracking-tight text-foreground sm:text-4xl md:text-[44px]">
             Reserve Your Seat
           </h1>
